@@ -37,6 +37,7 @@ app.get("/unsub", async (req, res) => {
 });
 
 app.get("/test", async (req, res) => {
+  //hey
   res.json({
     message: "we are live",
   });
