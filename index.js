@@ -41,6 +41,7 @@ app.post("/api/besttextsms", async (req, res) => {
   var options3 = {
     url: `https://besttext.com/api/v1/direct/messages/sms?token=E2kTAAdtGCnvxIt0fRC7lh9awPf6DIm3SVAsSIBxl1LSpeUwIO4nFfGpjInw`,
     method: "POST",
+    forever: true,
     json: {
       source,
       destination,
@@ -59,32 +60,6 @@ app.post("/api/besttextsms", async (req, res) => {
   // console.log(options3);
   request(options3, callback);
 });
-
-const { source, destination, message } = {
-  source: "3049682279",
-  destination: "19788024996",
-  message: "the best text you will ever receive from clem",
-};
-var options3 = {
-  url: `https://besttext.com/api/v1/direct/messages/sms?token=E2kTAAdtGCnvxIt0fRC7lh9awPf6DIm3SVAsSIBxl1LSpeUwIO4nFfGpjInw`,
-  method: "POST",
-  json: {
-    source,
-    destination,
-    message,
-  },
-};
-
-function callback(error, response, body) {
-  console.log(body, error);
-  // if (error) {
-  //   return res.status(200).send(error.response);
-  // }
-  // res.send(body);
-  // // }
-}
-// console.log(options3);
-request(options3, callback);
 
 app.get("/test", async (req, res) => {
   //hey
